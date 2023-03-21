@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AlertePage } from './alerte.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
-
 import { AlertePageRoutingModule } from './alerte-routing.module';
 
 @NgModule({
@@ -13,8 +12,8 @@ import { AlertePageRoutingModule } from './alerte-routing.module';
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    AlertePageRoutingModule
+    AlertePageRoutingModule,
   ],
-  declarations: [AlertePage]
+  declarations: [AlertePage],
 })
 export class AlertePageModule {}
