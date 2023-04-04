@@ -1,9 +1,51 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>contact</ion-title>
+    <ion-title> Contacts d'urgence </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Contacts d'urgence</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
+  <a href="{{'tel:'+888}}">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>SAMU (15) </ion-card-title>
+        <ion-card-subtitle>Cliquez pour appeler</ion-card-subtitle>
+      </ion-card-header>
+    </ion-card></a
+  >
+
+  <a href="{{'tel:'+888}}">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>POMPIERS (18) </ion-card-title>
+        <ion-card-subtitle>Cliquez pour appeler</ion-card-subtitle>
+      </ion-card-header>
+    </ion-card>
+  </a>
+
+  <a href="{{'tel:'+888}}">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Urgence en Europe (112) </ion-card-title>
+        <ion-card-subtitle>Cliquez pour appeler</ion-card-subtitle>
+      </ion-card-header>
+    </ion-card>
+  </a>
+
+  <a href="{{'tel:'+888}}">
+    <ion-card button="true">
+      <ion-card-header>
+        <ion-card-title>Médecin traitant </ion-card-title>
+        <ion-card-subtitle>Cliquez pour appeler</ion-card-subtitle>
+      </ion-card-header>
+    </ion-card>
+  </a>
+
+  <ion-button shape="round" fill="outline" size="large">Ajouter</ion-button>
 </ion-content>

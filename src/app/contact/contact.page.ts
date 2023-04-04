@@ -5,11 +5,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './contact.page.html',
   styleUrls: ['./contact.page.scss'],
 })
-export class ContactPage implements OnInit {
+export class ContactPage {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  
 
 }
