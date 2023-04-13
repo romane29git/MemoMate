@@ -1,17 +1,49 @@
-<ion-header [translucent]="true">
+<!-- <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Accueil
-    </ion-title>
+    <ion-title> Accueil </ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Accueil</ion-title>
+      <ion-title size="large" class="title">memo mate</ion-title>
     </ion-toolbar>
   </ion-header>
+  <img src="../assets/logo.png" />
 
-  <app-explore-container name="Home page"></app-explore-container>
+  <a href="#">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Médicament 1 </ion-card-title>
+        <ion-card-subtitle>J'ai pris ce médicament</ion-card-subtitle>
+      </ion-card-header>
+    </ion-card></a
+  >
+
+  <a href="#">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Médicament 2 </ion-card-title>
+        <ion-card-subtitle>J'ai pris ce médicament</ion-card-subtitle>
+      </ion-card-header>
+    </ion-card></a
+  >
+
+  <a href="#">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Médicament 3 </ion-card-title>
+        <ion-card-subtitle>J'ai pris ce médicament</ion-card-subtitle>
+      </ion-card-header>
+    </ion-card></a
+  >
+
+  <a href="{{'tel:'+888}}">
+    <ion-card class="urgence">
+      <ion-card-header>
+        <ion-card-title>APPEL D'URGENCE </ion-card-title>
+      </ion-card-header>
+    </ion-card></a
+  >
 </ion-content>
