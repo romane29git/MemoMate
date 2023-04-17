@@ -1,0 +1,23 @@
+ion-header {
+  margin-top: 10%;
+}
+
+
+.title {
+  // font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align: center;
+  font-family: "Rubik", sans-serif;
+  color: #1fc8cf;
+}
+
+
+ion-toolbar {
+    height: 80px;
+  }
+  
+  ion-toolbar img {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 10px;
+  }

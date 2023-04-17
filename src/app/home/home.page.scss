@@ -11,22 +11,28 @@ a {
   --background: #fc6565;
 }
 
-.title{
-    // font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    text-align: center;
-    font-family: 'Rubik', sans-serif;
-    color: #1FC8CF;
+.title {
+  // font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align: center;
+  font-family: "Rubik", sans-serif;
+  color: #1fc8cf;
 }
 
-img{
-    float: right;
-    height: 10%;
+ion-toolbar {
+  height: 80px;
 }
 
-ion-header{
-    margin-top: 10%;
+ion-toolbar img {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 10px;
 }
 
-.alerte{
-    background-color: aliceblue;
+ion-header {
+  margin-top: 10%;
+}
+
+.alerte {
+  background-color: aliceblue;
 }

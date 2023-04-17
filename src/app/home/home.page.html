@@ -1,11 +1,13 @@
 <ion-content [fullscreen]="true">
+  <!-- Header -->
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large" class="title">memo mate</ion-title>
+      <img src="../assets/logo.png" />
     </ion-toolbar>
   </ion-header>
-  <img src="../assets/logo.png" />
 
+  <!-- Alerte pour les prises de médicaments -->
   <ion-card class="alerte">
     <ion-card-header>
       <ion-card-title
@@ -46,6 +48,8 @@
       </ion-card-header>
     </ion-card></a
   >
+
+  <!-- Appel d'urgence -->
 
   <a href="{{'tel:'+888}}">
     <ion-card class="urgence">
