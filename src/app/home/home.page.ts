@@ -1,12 +1,20 @@
 import { Component } from '@angular/core';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss']
+  styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
-  constructor() {}
-
+  constructor(public firestore: AngularFirestore) {
+  }
+  add() {
+    this.firestore.collection('treatment').add({
+      Alarm: false,
+      Name: 'coucou',
+      Dosage: '500 mg',
+    });
+  }
 }

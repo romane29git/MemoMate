@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "pii2023": {
+      "hosting": {
+        "app": [
+          "pii2023"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "pii2023"
+  }
+}
