@@ -1,5 +1,5 @@
 ion-content{
-  --background: rgb(237, 243, 247);
+  --background: #202020;
 }
 
 ion-card {
@@ -16,7 +16,6 @@ a {
 }
 
 .title {
-  // font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   text-align: center;
   font-family: "Rubik", sans-serif;
   color: #1fc8cf;
@@ -24,7 +23,7 @@ a {
 
 ion-toolbar {
   height: 80px;
-  --background: rgb(237, 243, 247);
+  --background: #202020;
 }
 
 ion-toolbar img {

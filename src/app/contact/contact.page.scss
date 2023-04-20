@@ -1,26 +1,25 @@
 ion-content {
-  --background : rgb(237, 243, 247);
+  --background: #202020;
 }
 ion-card {
-  background-color: #65fcc8;
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);}
+
+a {
+  text-decoration: none;
 }
 
-a{
-    text-decoration: none;
-}
-
-button{
-    justify-content: center;
+button {
+  justify-content: center;
 }
 
 .title {
   text-align: left;
   font-family: "Rubik", sans-serif;
-  color: #1fc8cf;
+  color: #dddddd;
 }
 ion-toolbar {
   height: 80px;
-  --background : rgb(237, 243, 247);
+  --background: #202020;
 }
 
 ion-toolbar img {
@@ -34,3 +33,10 @@ ion-header {
   margin-top: 10%;
 }
 
+ion-button {
+  background-color: #026161;
+  border-radius: 10px;
+  border: none;
+  color: #202020;
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+}

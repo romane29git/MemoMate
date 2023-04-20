@@ -7,41 +7,20 @@
     </ion-toolbar>
   </ion-header>
 
+  <!-- Liste avec les numéros d'urgence -->
   <a href="{{'tel:'+888}}">
-    <ion-card>
+    <!--voir pour appeler num différents -->
+    <ion-card *ngFor="let item of items |async">
       <ion-card-header>
-        <ion-card-title>SAMU (15) </ion-card-title>
+        <ion-card-title>{{item.name}}</ion-card-title>
         <ion-card-subtitle>Cliquez pour appeler</ion-card-subtitle>
       </ion-card-header>
+      <ion-button (click)="delete(item.id)" color="danger" fill="outline">Supprimer</ion-button>
     </ion-card></a
   >
 
-  <a href="{{'tel:'+888}}">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>POMPIERS (18) </ion-card-title>
-        <ion-card-subtitle>Cliquez pour appeler</ion-card-subtitle>
-      </ion-card-header>
-    </ion-card>
-  </a>
-
-  <a href="{{'tel:'+888}}">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Urgence en Europe (112) </ion-card-title>
-        <ion-card-subtitle>Cliquez pour appeler</ion-card-subtitle>
-      </ion-card-header>
-    </ion-card>
-  </a>
-
-  <a href="{{'tel:'+888}}">
-    <ion-card button="true">
-      <ion-card-header>
-        <ion-card-title>Médecin traitant </ion-card-title>
-        <ion-card-subtitle>Cliquez pour appeler</ion-card-subtitle>
-      </ion-card-header>
-    </ion-card>
-  </a>
-
-  <ion-button shape="round" fill="outline" size="large">Ajouter</ion-button>
+  <div class="ion-text-center">
+  <ion-button fill="outline" size="large" (click)="add()"
+    >Ajouter</ion-button
+  > </div>
 </ion-content>

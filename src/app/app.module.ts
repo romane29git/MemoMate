@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
 
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { FormsModule } from '@angular/forms';
+
 
 export const firebaseConfig = {
   apiKey: "AIzaSyApCptgeyDv6FVENaIg6H1MBlDJ3d-7Lkw",
@@ -28,6 +30,7 @@ export const firebaseConfig = {
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
+    FormsModule,
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
