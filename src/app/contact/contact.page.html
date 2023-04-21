@@ -15,12 +15,13 @@
         <ion-card-title>{{item.name}}</ion-card-title>
         <ion-card-subtitle>Cliquez pour appeler</ion-card-subtitle>
       </ion-card-header>
-      <ion-button (click)="delete(item.id)" color="danger" fill="outline">Supprimer</ion-button>
+      <ion-button (click)="delete(item.id)" color="danger" fill="outline"
+        >Supprimer</ion-button
+      >
     </ion-card></a
   >
 
   <div class="ion-text-center">
-  <ion-button fill="outline" size="large" (click)="add()"
-    >Ajouter</ion-button
-  > </div>
+    <ion-button fill="outline" size="large" (click)="add()">Ajouter</ion-button>
+  </div>
 </ion-content>

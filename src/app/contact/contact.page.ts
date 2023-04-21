@@ -76,7 +76,7 @@ export class ContactPage {
     await this.showCustomPopup(); //on poursuit des que la pop-up est entièrement créée et prête à être utilisée
   }
 
-  // Suppression d'un élément
+  // Suppression d'un élément -> marche pas pour l'instant
   //configuration de la fenêtre pop-up
   async delete(id: string) {
     console.log("ID à supprimer :", id);
