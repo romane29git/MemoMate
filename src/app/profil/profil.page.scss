@@ -91,3 +91,18 @@ ion-header {
   margin: 6px 0px 6px 0px!important;
   min-height: 34px;
 }
+
+.small-avatar {
+  width: 30px;
+  height: 30px;
+}
+
+.custom-item {
+  align-items: flex-start;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
