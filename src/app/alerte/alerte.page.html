@@ -7,27 +7,26 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-card>
-    <ion-item lines="none" class="custom-item">
-      <ion-avatar slot="start" class="small-avatar">
-        <img src="../../assets/medicament.png" />
-      </ion-avatar>
-      <ion-card-header *ngFor="let item of items |async">
-        <ion-card-title> {{item.Name}} </ion-card-title>
-        <ion-card-content> {{item.Hour}} </ion-card-content>
-      </ion-card-header>
-    </ion-item>
+  <div *ngFor="let item of items |async">
+    <ion-card>
+      <ion-item lines="none" class="custom-item">
+        <ion-avatar slot="start" class="small-avatar">
+          <img src="../../assets/medicament.png" />
+        </ion-avatar>
+        <ion-card-header>
+          <ion-card-title> {{item.Name}} </ion-card-title>
+          <ion-card-content> {{item.hour}} </ion-card-content>
+        </ion-card-header>
+      </ion-item>
 
-    <ion-button size="small" fill="clear">
-      <ion-icon slot="start" name="create"></ion-icon>
-    </ion-button>
-  </ion-card>
+      <ion-button size="small" fill="clear" (click)="updateHour(item.Name)">
+        <ion-icon slot="start" name="create"></ion-icon>
+      </ion-button>
+    </ion-card>
+  </div>
 
-  <div class="ion-text-center" *ngFor="let item of items |async">
-    <ion-button
-      fill="outline"
-      size="large"
-      (click)="selectAlerts()"
+  <div class="ion-text-center">
+    <ion-button fill="outline" size="large" (click)="selectAlerts()"
       >Ajouter</ion-button
     >
   </div>

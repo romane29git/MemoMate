@@ -9,11 +9,5 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 export class HomePage {
   constructor(public firestore: AngularFirestore) {
   }
-  add() {
-    this.firestore.collection('treatment').add({
-      Alarm: false,
-      Name: 'coucou',
-      Dosage: '500 mg',
-    });
-  }
+  
 }
