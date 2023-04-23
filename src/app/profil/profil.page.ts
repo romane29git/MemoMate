@@ -42,7 +42,8 @@ export class ProfilPage implements OnInit {
       .valueChanges();
   }
 
-  //Lecture
+  //Lecture des données
+
   ngOnInit() {
     this.user$ = this.firestore
       .collection('users')
@@ -78,11 +79,11 @@ export class ProfilPage implements OnInit {
   }
 
   async presentTreatmentSelection() {
-    const treatments = await this.firestore
-    .collection('treatment', (ref) => ref.where('Actual', '==', false))
-    .valueChanges()
-    .pipe(first())
-    .toPromise() as { id: string, Name: string }[];
+    const treatments = (await this.firestore
+      .collection('treatment', (ref) => ref.where('Actual', '==', false))
+      .valueChanges()
+      .pipe(first())
+      .toPromise()) as { id: string; Name: string }[];
 
     const inputs: AlertInput[] = [];
 
@@ -133,8 +134,9 @@ export class ProfilPage implements OnInit {
 
     return result.data.values;
 
-
-    return await alert.onDidDismiss().then(data => data.role !== 'cancel' ? data.data.values : null);
+    return await alert
+      .onDidDismiss()
+      .then((data) => (data.role !== 'cancel' ? data.data.values : null));
   }
 
   async updateTreatment(selectedTreatments: string[]) {
@@ -142,7 +144,9 @@ export class ProfilPage implements OnInit {
     const batch = this.firestore.firestore.batch();
 
     for (const treatmentId of selectedTreatments) {
-      const treatmentDocRef = this.firestore.collection('treatment').doc(treatmentId).ref;
+      const treatmentDocRef = this.firestore
+        .collection('treatment')
+        .doc(treatmentId).ref;
       batch.update(treatmentDocRef, { Actual: true });
     }
 
@@ -169,4 +173,3 @@ export class ProfilPage implements OnInit {
     await alert.present();
   }
 }
-
