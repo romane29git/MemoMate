@@ -36,7 +36,7 @@ export class AlertePage {
         {
           name: 'Alarm',
           type: 'radio',
-          label: 'doliprane',
+          label: 'Activée',
           value: true,
         },
         {

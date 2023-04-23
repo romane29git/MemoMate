@@ -90,6 +90,12 @@
         <div *ngFor="let item of items |async">
           <ion-card-content> {{item.Name}} </ion-card-content>
         </div>
+          <ion-button
+            fill="outline"
+            size="large"
+            (click)="selectTreatments()"
+            >Ajouter</ion-button
+          >
       </ion-card-header>
     </ion-item>
 
