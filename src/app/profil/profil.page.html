@@ -40,7 +40,7 @@
         </ion-card-header>
       </ion-item>
 
-      <ion-button size="small" fill="clear">
+      <ion-button size="small" fill="clear" (click)="updateHeight()">
         <ion-icon slot="start" name="create"></ion-icon>
       </ion-button>
     </ion-card>
@@ -57,7 +57,7 @@
         </ion-card-header>
       </ion-item>
 
-      <ion-button size="small" fill="clear">
+      <ion-button size="small" fill="clear" (click)="updateWeight()">
         <ion-icon slot="start" name="create"></ion-icon>
       </ion-button>
     </ion-card>
@@ -70,11 +70,11 @@
       </ion-avatar>
       <ion-card-header *ngIf="user$ | async as users">
         <ion-card-title> Mon médecin traitant </ion-card-title>
-        <ion-card-content> {{users.doctor}} </ion-card-content>
+        <ion-card-content> Dr. {{users.doctor}} </ion-card-content>
       </ion-card-header>
     </ion-item>
 
-    <ion-button size="small" fill="clear">
+    <ion-button size="small" fill="clear" (click)="updateDoctor()">
       <ion-icon slot="start" name="create"></ion-icon>
     </ion-button>
   </ion-card>

@@ -156,7 +156,7 @@ export class ProfilPage implements OnInit {
   async presentSuccessMessage() {
     const alert = await this.alertController.create({
       header: 'Succès',
-      message: 'Les traitements ont été mis à jour avec succès',
+      message: 'Les données ont été mises à jour avec succès',
       buttons: ['OK'],
     });
 
@@ -166,10 +166,124 @@ export class ProfilPage implements OnInit {
   async presentErrorMessage() {
     const alert = await this.alertController.create({
       header: 'Erreur',
-      message: 'Une erreur est survenue lors de la mise à jour des traitements',
+      message: 'Une erreur est survenue lors de la mise à jour des données',
       buttons: ['OK'],
     });
 
     await alert.present();
   }
+
+
+
+  //modif taille 
+
+  async updateHeight() {
+    const alert = await this.alertController.create({
+      header: 'Modifier la taille',
+      inputs: [
+        {
+          name: 'height',
+          type: 'number',
+          placeholder: 'Entrez la nouvelle taille',
+        },
+      ],
+      buttons: [
+        {
+          text: 'Annuler',
+          role: 'cancel',
+        },
+        {
+          text: 'Valider',
+          handler: async (data) => {
+            try {
+              const userDocRef = this.firestore.collection('users').doc('1');
+              await userDocRef.update({ height: data.height });
+              await this.presentSuccessMessage();
+            } catch (error) {
+              console.error(error);
+              await this.presentErrorMessage();
+            }
+          },
+        },
+      ],
+    });
+  
+    await alert.present();
+  }
+
+  //modif poids 
+
+  async updateWeight() {
+    const alert = await this.alertController.create({
+      header: 'Modifier le poids',
+      inputs: [
+        {
+          name: 'weight',
+          type: 'number',
+          placeholder: 'Entrez le nouveau poids',
+        },
+      ],
+      buttons: [
+        {
+          text: 'Annuler',
+          role: 'cancel',
+        },
+        {
+          text: 'Valider',
+          handler: async (data) => {
+            try {
+              const userDocRef = this.firestore.collection('users').doc('1');
+              await userDocRef.update({ weight: data.weight });
+              await this.presentSuccessMessage();
+            } catch (error) {
+              console.error(error);
+              await this.presentErrorMessage();
+            }
+          },
+        },
+      ],
+    });
+  
+    await alert.present();
+  }
+  
+
+//modif médecin  
+
+async updateDoctor() {
+  const alert = await this.alertController.create({
+    header: 'Modifier le nom du médecin traitant',
+    inputs: [
+      {
+        name: 'doctor',
+        type: 'text',
+        placeholder: 'Entrez nom de votre médecin traitant',
+      },
+    ],
+    buttons: [
+      {
+        text: 'Annuler',
+        role: 'cancel',
+      },
+      {
+        text: 'Valider',
+        handler: async (data) => {
+          try {
+            const userDocRef = this.firestore.collection('users').doc('1');
+            await userDocRef.update({ doctor: data.doctor });
+            await this.presentSuccessMessage();
+          } catch (error) {
+            console.error(error);
+            await this.presentErrorMessage();
+          }
+        },
+      },
+    ],
+  });
+
+  await alert.present();
 }
+
+  
+}
+
