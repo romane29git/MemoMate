@@ -1,5 +1,5 @@
 ion-content {
-  --background: rgb(237, 243, 247);
+  background-color: #f5f5f5;
 }
 
 .title {
@@ -34,7 +34,6 @@ ion-header {
 }
 
 .banner {
-  background-color: #f5f5f5;
   height: 150px;
   display: flex;
   flex-direction: column;

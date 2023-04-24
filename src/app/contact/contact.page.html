@@ -1,25 +1,20 @@
 <ion-content [fullscreen]="true">
-  <!-- Header -->
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large" class="title">Contact d'urgence</ion-title>
-      <img src="../assets/logo.png" alt="logo" />
-    </ion-toolbar>
-  </ion-header>
+  <div class="banner">
+    <h1 class="banner-title">Contacts d'urgence</h1>
+  </div>
 
   <!-- Liste avec les numéros d'urgence -->
   <a href="{{'tel:'+888}}">
-    <!--voir pour appeler num différents -->
     <ion-card *ngFor="let item of items |async">
       <ion-card-header>
         <ion-card-title>{{item.name}}</ion-card-title>
+        
         <ion-card-subtitle>Cliquez pour appeler</ion-card-subtitle>
       </ion-card-header>
-      <ion-button (click)="delete(item.id)" color="danger" fill="outline"
-        >Supprimer</ion-button
-      >
-    </ion-card></a
-  >
+      <ion-button class="custom-icon" (click)="delete(item.id)" fill="clear">
+        <ion-icon name="trash"> </ion-icon>
+      </ion-button> </ion-card
+  ></a>
 
   <div class="ion-text-center">
     <ion-button fill="outline" size="large" (click)="add()">Ajouter</ion-button>
