@@ -7,57 +7,27 @@
     </ion-toolbar>
   </ion-header>
 
-  <!-- Alerte pour les prises de médicaments
-  <ion-card class="alerte">
-    <ion-card-header>
-      <ion-card-title
-        >
-        <ion-icon name="warning"></ion-icon>Attention<ion-icon
-          name="warning"
-        >
-        </ion-icon
-      ></ion-card-title>
-      <ion-card-content
-        >Vous n'avez pas pris... Une alerte va être envoyée à votre médecin
-        traitant</ion-card-content
-      >
+  <ion-card
+    *ngFor="let item of items |async"
+    (click)="onCardClick($event, item)"
+  >
+    <ion-card-header
+      [ngStyle]="{ 'background-color': item.selected ? 'red' : 'white' }"
+    >
+      <ion-card-title>{{item.Name}}</ion-card-title>
+      <ion-card-subtitle
+        >{{item.selected ? 'J\'ai pris ce médicament' :'Je n\'ai pas pris ce médicament'}}
+      </ion-card-subtitle>
     </ion-card-header>
-  </ion-card> -->
-
-  <a href="#">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Médicament 1 </ion-card-title>
-        <ion-card-subtitle>J'ai pris ce médicament</ion-card-subtitle>
-      </ion-card-header>
-    </ion-card></a
-  >
-
-  <a href="#">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Médicament 2 </ion-card-title>
-        <ion-card-subtitle>J'ai pris ce médicament</ion-card-subtitle>
-      </ion-card-header>
-    </ion-card></a
-  >
-
-  <a href="#">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Médicament 3 </ion-card-title>
-        <ion-card-subtitle>J'ai pris ce médicament</ion-card-subtitle>
-      </ion-card-header>
-    </ion-card></a
-  >
+  </ion-card>
 
   <!-- Appel d'urgence -->
-  <a href="{{'tel:'+888}}">  <!-- appel au 15 -->
+  <a href="{{'tel:'+888}}">
+    <!-- appel au 15 -->
     <ion-card class="urgence">
       <ion-card-header>
         <ion-card-title>APPEL D'URGENCE </ion-card-title>
       </ion-card-header>
     </ion-card></a
   >
-
 </ion-content>

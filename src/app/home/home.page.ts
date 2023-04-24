@@ -1,5 +1,16 @@
-import { Component } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Component, OnInit } from '@angular/core';
+import {
+  AngularFirestore,
+  AngularFirestoreCollection,
+  AngularFirestoreDocument,
+  AngularFirestoreModule,
+} from '@angular/fire/compat/firestore';
+import { Observable, async } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { AlertController, AlertInput } from '@ionic/angular';
+import { resolve } from 'dns';
+import { first } from 'rxjs/operators';
+import 'firebase/firestore';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +18,19 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  constructor(public firestore: AngularFirestore) {
+  items: Observable<any[]>;
+
+  constructor(
+    public firestore: AngularFirestore,
+    public alertController: AlertController
+  ) {
+    this.items = this.firestore
+      .collection('treatment', (ref) =>
+        ref.where('Actual', '==', true).where('Alarm', '==', true)
+      )
+      .valueChanges();
   }
-  
+  onCardClick(event: MouseEvent, item: any) {
+    item.selected = !item.selected;
+  }
 }
