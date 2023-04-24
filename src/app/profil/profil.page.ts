@@ -173,9 +173,7 @@ export class ProfilPage implements OnInit {
     await alert.present();
   }
 
-
-
-  //modif taille 
+  //modif taille
 
   async updateHeight() {
     const alert = await this.alertController.create({
@@ -207,11 +205,11 @@ export class ProfilPage implements OnInit {
         },
       ],
     });
-  
+
     await alert.present();
   }
 
-  //modif poids 
+  //modif poids
 
   async updateWeight() {
     const alert = await this.alertController.create({
@@ -243,47 +241,43 @@ export class ProfilPage implements OnInit {
         },
       ],
     });
-  
+
     await alert.present();
   }
-  
 
-//modif médecin  
+  //modif médecin
 
-async updateDoctor() {
-  const alert = await this.alertController.create({
-    header: 'Modifier le nom du médecin traitant',
-    inputs: [
-      {
-        name: 'doctor',
-        type: 'text',
-        placeholder: 'Entrez nom de votre médecin traitant',
-      },
-    ],
-    buttons: [
-      {
-        text: 'Annuler',
-        role: 'cancel',
-      },
-      {
-        text: 'Valider',
-        handler: async (data) => {
-          try {
-            const userDocRef = this.firestore.collection('users').doc('1');
-            await userDocRef.update({ doctor: data.doctor });
-            await this.presentSuccessMessage();
-          } catch (error) {
-            console.error(error);
-            await this.presentErrorMessage();
-          }
+  async updateDoctor() {
+    const alert = await this.alertController.create({
+      header: 'Modifier le nom du médecin traitant',
+      inputs: [
+        {
+          name: 'doctor',
+          type: 'text',
+          placeholder: 'Entrez nom de votre médecin traitant',
         },
-      },
-    ],
-  });
+      ],
+      buttons: [
+        {
+          text: 'Annuler',
+          role: 'cancel',
+        },
+        {
+          text: 'Valider',
+          handler: async (data) => {
+            try {
+              const userDocRef = this.firestore.collection('users').doc('1');
+              await userDocRef.update({ doctor: data.doctor });
+              await this.presentSuccessMessage();
+            } catch (error) {
+              console.error(error);
+              await this.presentErrorMessage();
+            }
+          },
+        },
+      ],
+    });
 
-  await alert.present();
+    await alert.present();
+  }
 }
-
-  
-}
-

@@ -56,14 +56,14 @@ export class ContactPage {
           handler: (data) => {
             // générer un nouvel identifiant unique
             const id = this.firestore.createId();
-          
+
             // ajouter l'élément avec l'identifiant unique à la base de données
             this.firestore.collection('contact').doc(id).set({
               id: id,
               name: data.name,
-              number: data.number
+              number: data.number,
             });
-          }
+          },
         },
       ],
     });
@@ -79,7 +79,7 @@ export class ContactPage {
   // Suppression d'un élément -> marche pas pour l'instant
   //configuration de la fenêtre pop-up
   async delete(id: string) {
-    console.log("ID à supprimer :", id);
+    console.log('ID à supprimer :', id);
 
     const alert = await this.alertController.create({
       header: 'Supprimer le contact',

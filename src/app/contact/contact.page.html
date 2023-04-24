@@ -8,7 +8,7 @@
     <ion-card *ngFor="let item of items |async">
       <ion-card-header>
         <ion-card-title>{{item.name}}</ion-card-title>
-        
+
         <ion-card-subtitle>Cliquez pour appeler</ion-card-subtitle>
       </ion-card-header>
       <ion-button class="custom-icon" (click)="delete(item.id)" fill="clear">
