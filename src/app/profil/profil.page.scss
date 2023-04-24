@@ -1,33 +1,5 @@
-ion-content {
-  --background: rgb(237, 243, 247);
-}
-
-.title {
-  text-align: left;
-  font-family: "Rubik", sans-serif;
-  color: #1fc8cf;
-}
-ion-toolbar {
-  height: 80px;
-  --background: rgb(237, 243, 247);
-}
-
-ion-toolbar img {
-  height: 100%;
-  position: absolute;
-  top: 0;
-  right: 10px;
-}
-
-ion-header {
-  margin-top: 10%;
-}
-
-
-//css page 
-
 .header{
-  background-color: #1fc8cf;
+  background-color: rgb(20 216 203);
   height: 180px;
   padding-top: 1px;
 }
@@ -69,7 +41,7 @@ ion-header {
 }
 
 .border-blue{
-  border: 7px solid rgb(72, 72, 232) ;
+  border: 7px solid rgb(0 92 91) ;
   border-radius: 50%;
   width: fit-content;
 }
@@ -80,21 +52,10 @@ ion-header {
   margin-top: -84px;
 }
 
-.tweet{
-  margin-top: -10px;
-
-}
-
-.tweet ion-label{
-  line-height: 1!important;
-  font-size: 15px;
-  margin: 6px 0px 6px 0px!important;
-  min-height: 34px;
-}
-
 .small-avatar {
   width: 30px;
   height: 30px;
+  margin-top: 15px;
 }
 
 .custom-item {
@@ -106,3 +67,59 @@ ion-header {
   justify-content: space-between;
   align-items: center;
 }
+
+ion-badge{
+  --background: rgb(0 92 91);
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.title-header{
+  font-weight: 600;
+}
+
+.small-avatar {
+  height: 30px;
+  width: 30px;
+}
+
+.custom-button {
+  color: rgb(0 92 91);
+  font-size: 14px;
+}
+
+.custom-icon {
+  color: rgb(0 92 91);
+  font-size: 1.5rem; 
+}
+
+.custom-title {
+  font-size: 1.2rem; 
+  text-align: center;
+}
+
+.custom-content {
+  font-size: 1rem; 
+  text-align: center;
+}
+
+.custom-card{
+  padding: 0px;
+  text-align: center;
+}
+
+.custom-add{
+  --background: rgb(0 92 91);
+  color: white;
+}
+
+.custom-add:hover{
+  --background: rgb(20 216 203);
+}
+
+.button-container {
+  text-align: center;
+}
+
+
+

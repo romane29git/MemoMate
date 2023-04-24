@@ -5,13 +5,13 @@
 
     <div class="space-between">
       <div class="followings" *ngIf="user$ | async as users">
-        <p>Date de naissance</p>
-        <ion-badge color="primary" mode="ios">{{users.birthdate}}</ion-badge>
+        <p class="title_header">Date de naissance</p>
+        <ion-badge mode="ios">{{users.birthdate}}</ion-badge>
       </div>
 
       <div class="followings" *ngIf="user$ | async as users">
-        <p>Groupe sanguin</p>
-        <ion-badge color="primary" mode="ios">{{users.bloodtype}}</ion-badge>
+        <p class="title_header">Groupe sanguin</p>
+        <ion-badge mode="ios">{{users.bloodtype}}</ion-badge>
       </div>
     </div>
   </div>
@@ -29,39 +29,48 @@
 
   <div class="card-container">
     <!-- taille -->
-    <ion-card>
+    <ion-card class="custom-card">
       <ion-item lines="none" class="custom-item">
-        <ion-avatar slot="start" class="small-avatar">
-          <img src="../../assets/height.png" />
-        </ion-avatar>
         <ion-card-header *ngIf="user$ | async as users">
-          <ion-card-title> Ma taille </ion-card-title>
-          <ion-card-content> {{users.height}} cm </ion-card-content>
+          <ion-card-title class="custom-title">Ma taille</ion-card-title>
+          <ion-card-content class="custom-content"
+            >{{users.height}} cm
+          </ion-card-content>
         </ion-card-header>
       </ion-item>
 
-      <ion-button size="small" fill="clear" (click)="updateHeight()">
-        <ion-icon slot="start" name="create"></ion-icon>
+      <ion-button
+        class="custom-button"
+        size="small"
+        fill="clear"
+        (click)="updateHeight()"
+      >
+        <ion-icon class="custom-icon" name="create"></ion-icon>
       </ion-button>
     </ion-card>
 
     <!-- poids -->
-    <ion-card>
+    <ion-card class="custom-card">
       <ion-item lines="none" class="custom-item">
-        <ion-avatar slot="start" class="small-avatar">
-          <img src="../../assets/balance.png" />
-        </ion-avatar>
         <ion-card-header *ngIf="user$ | async as users">
-          <ion-card-title> Mon poids </ion-card-title>
-          <ion-card-content> {{users.weight}} kg </ion-card-content>
+          <ion-card-title class="custom-title">Mon poids</ion-card-title>
+          <ion-card-content class="custom-content">
+            {{users.weight}} kg
+          </ion-card-content>
         </ion-card-header>
       </ion-item>
 
-      <ion-button size="small" fill="clear" (click)="updateWeight()">
-        <ion-icon slot="start" name="create"></ion-icon>
+      <ion-button
+        class="custom-button"
+        size="small"
+        fill="clear"
+        (click)="updateWeight()"
+      >
+        <ion-icon class="custom-icon" name="create"></ion-icon>
       </ion-button>
     </ion-card>
   </div>
+
   <!-- docteur -->
   <ion-card>
     <ion-item lines="none" class="custom-item">
@@ -69,38 +78,46 @@
         <img src="../../assets/docteur.png" />
       </ion-avatar>
       <ion-card-header *ngIf="user$ | async as users">
-        <ion-card-title> Mon médecin traitant </ion-card-title>
-        <ion-card-content> Dr. {{users.doctor}} </ion-card-content>
+        <ion-card-title class="custom-title">
+          Mon médecin traitant
+        </ion-card-title>
+        <ion-card-content class="custom-content">
+          Dr. {{users.doctor}}
+        </ion-card-content>
       </ion-card-header>
     </ion-item>
 
-    <ion-button size="small" fill="clear" (click)="updateDoctor()">
-      <ion-icon slot="start" name="create"></ion-icon>
+    <ion-button
+      class="custom-button"
+      size="small"
+      fill="clear"
+      (click)="updateDoctor()"
+    >
+      <ion-icon class="custom-icon" name="create"></ion-icon>
     </ion-button>
   </ion-card>
 
   <!-- traitements en cours -->
-  <ion-card>
+  <ion-card class="custom-card">
     <ion-item lines="none" class="custom-item">
       <ion-avatar slot="start" class="small-avatar">
         <img src="../../assets/medicament.png" />
       </ion-avatar>
       <ion-card-header>
-        <ion-card-title> Mes traitements en cours </ion-card-title>
+        <ion-card-title class="custom-title">
+          Mes traitements en cours
+        </ion-card-title>
         <div *ngFor="let item of items |async">
-          <ion-card-content> {{item.Name}} </ion-card-content>
+          <ion-card-content class="custom-content">
+            {{item.Name}}
+          </ion-card-content>
         </div>
-          <ion-button
-            fill="outline"
-            size="large"
-            (click)="selectTreatments()"
+        <div class="button-container">
+          <ion-button class="custom-add" (click)="selectTreatments()"
             >Ajouter</ion-button
           >
+        </div>
       </ion-card-header>
     </ion-item>
-
-    <ion-button size="small" fill="clear">
-      <ion-icon slot="start" name="create"></ion-icon>
-    </ion-button>
   </ion-card>
 </ion-content>
