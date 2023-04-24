@@ -1,9 +1,10 @@
-ion-content{
-  --background: #202020;
+.header{
+  background-color: rgb(20 216 203);
+  height: 180px;
+  padding-top: 1px;
 }
 
 ion-card {
-  --background: #65fcc8;
   text-align: center;
 }
 
@@ -12,7 +13,7 @@ a {
 }
 
 .urgence {
-  --background: #fc6565;
+  --background:#a1f0f4;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -27,7 +28,6 @@ a {
 
 ion-toolbar {
   height: 80px;
-  --background: #202020;
 }
 
 ion-toolbar img {
@@ -43,4 +43,33 @@ ion-header {
 
 .alerte {
   background-color: aliceblue;
+}
+
+.banner {
+  background-color: #f5f5f5;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-title {
+  font-size: 3em;
+  font-weight: bold;
+  color: rgb(0 92 91);
+  margin-bottom: 20px;
+}
+
+.banner-description {
+  font-size: 1.2em;
+  color: #444444;
+  margin-bottom: 30px;
+  text-align: center;
+  max-width: 80%;
+}
+
+.banner-logo {
+  width: 50px;
+  margin-bottom: 0px;
 }

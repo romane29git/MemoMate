@@ -1,18 +1,17 @@
 <ion-content [fullscreen]="true">
   <!-- Header -->
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large" class="title">Memo mate</ion-title>
-      <img src="../assets/logo.png" alt="logo" />
-    </ion-toolbar>
-  </ion-header>
+  <div class="banner">
+    <img class="banner-logo" src="../../assets/logo.png" alt="Logo Memo Mate">
+    <h1 class="banner-title">Memo Mate</h1>
+    <p class="banner-description">Votre compagnon santé pour la gestion de vos médicaments</p>
+  </div>
 
   <ion-card
     *ngFor="let item of items |async"
     (click)="onCardClick($event, item)"
   >
     <ion-card-header
-      [ngStyle]="{ 'background-color': item.selected ? 'white' : 'red' }"
+      [ngStyle]="{ 'background-color': item.selected ? 'rgb(214 252 205)' : '#FFFAFA' }"
     >
       <ion-card-title>{{item.Name}}</ion-card-title>
       <ion-card-subtitle
